@@ -10,8 +10,8 @@ COPY . /app
 # Installer les dépendances
 RUN pip install -r requirements.txt
 
-# Exposer le port 8000 pour accéder à l'application web
-EXPOSE 8000
+# Exposer le port 8080 pour accéder à l'application web
+EXPOSE 8080
 
 # Lancer l'application web avec Uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]

@@ -62,6 +62,14 @@ Les tests unitaires sont implémentés à l'aide de pytest. Vous pouvez les lanc
 
 >source ``venv/bin/activate`` ==> Linux / MacOS
 
+## Construire l'image docker
+
+> docker build -t p7_api:latest .
+
+## Lancer l'image docker
+
+> docker run -p 8000:8000 -i -t p7_api:latest
+
 ## Lancer minikube
 ``minikube start``
 
