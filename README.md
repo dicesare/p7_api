@@ -29,6 +29,8 @@ Pour lancer l'API, exécutez la commande suivante :
 
 Une fois l'API lancée, vous pouvez envoyer une requête HTTP pour obtenir une prédiction. Voici un exemple avec cURL :
 
+
+
 `curl -X POST
 http://localhost:8000/predict
 -H 'Content-Type: application/json'
@@ -36,6 +38,7 @@ http://localhost:8000/predict
 "text": "I love this product!"
 }'
 `
+
 
 ## Tests
 
@@ -46,6 +49,56 @@ Les tests unitaires sont implémentés à l'aide de pytest. Vous pouvez les lanc
 
 `python -m pytest test/test_client.py`
 
+## Ouvrir le terminal en tant qu'administrateur
+> Windows : clic droit sur l'icône du terminal > "Exécuter en tant qu'administrateur"
+> 
+> Linux / MacOS : utiliser sudo  ``sudo su``
+
+### Aller dans le dossier du projet p7_api
+``cd /path/to/p7_api``
+
+### Activer l'environnement virtuel
+>source ``venv/Script/activate.bat`` ==> Windows
+
+>source ``venv/bin/activate`` ==> Linux / MacOS
+
+## Construire l'image docker
+
+> docker build -t p7_api:latest .
+
+## Lancer l'image docker
+
+> docker run -p 8000:8000 -i -t p7_api:latest
+
+## Lancer minikube
+``minikube start``
+
+## Créer le déploiement Kubernetes
+``kubectl apply -f kubernetes/p7_api.yaml``
+
+## Créer le service Kubernetes
+``kubectl apply -f kubernetes/p7_api_service.yaml``
+
+## Vérifier l'état des déploiements
+``kubectl get deployments``
+
+## Vérifier l'état des pods
+``kubectl get pods``
+
+## Vérifier l'état des services
+``kubectl get services``
+
+## Exposer le déploiement sur l'hôte
+``minikube service p7-api``
+
+## Faire une requête POST vers le déploiement
+
+> Le port dépendra de celui renseigné dans le fichier de configuration ``***.yaml`` de kubernetes
+> 
+``curl -X POST http://localhost:30080/predict -H 'Content-Type: application/json' -d '{"text": "Je suis content !"}'
+``
+## Arrêter minikube
+``minikube stop``
 
 
 ## Auteurs

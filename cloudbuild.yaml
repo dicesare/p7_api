@@ -1,0 +1,19 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/p7-cloud-385013/p7-api', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/p7-cloud-385013/p7-api']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args:
+  - 'run'
+  - 'deploy'
+  - 'p7-api'
+  - '--image'
+  - 'gcr.io/p7-cloud-385013/p7-api'
+  - '--platform'
+  - 'managed'
+  - '--region'
+  - 'europe-southwest1'
+images:
+- 'gcr.io/p7-cloud-385013/p7-api'
