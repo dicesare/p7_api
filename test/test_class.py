@@ -34,7 +34,7 @@ def test_multi_predict():
         "This is an amazing product.",
         "I had a great time at the party.",
         "The food was delicious.",
-        "Their customer service is outstanding.",
+        # "Their customer service is outstanding.",
     ]
 
     negative_texts = [

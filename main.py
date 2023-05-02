@@ -15,10 +15,10 @@ firefox_path = 'C:\\Program Files\\Mozilla Firefox\\firefox.exe'
 webbrowser.register('firefox', None, webbrowser.BackgroundBrowser(firefox_path))
 
 # ouvrir la page web
-url = 'http://localhost:8000/docs'
+url = 'http://localhost:8080/docs'
 
 if __name__ == "__main__":
     # Lancer votre application Uvicorn sur le port 8000
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info", reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=8080, log_level="info", reload=True)
     # Ouvrir le navigateur après le lancement de l'application
     webbrowser.get('firefox').open_new_tab(url)

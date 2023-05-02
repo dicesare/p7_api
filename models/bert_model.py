@@ -14,6 +14,7 @@ class BertModel(tf.keras.Model):
     def predict_sentiment(self, text, return_sentiment=True):
         # Set the device used during inference
         inputs = text
+        print(text)
         prediction = self.loaded_model.predict(inputs)
         # Set the threshold and return the sentiment
         threshold = 0.5
