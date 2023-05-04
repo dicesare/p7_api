@@ -3,7 +3,7 @@ import os
 
 def get_model_path():
     current_directory = os.path.dirname(os.path.abspath(__file__))
-    model_base_directory = os.path.join(current_directory, "..", "models", "model_saved", "Sentiment140")
+    model_base_directory = os.path.join(current_directory, "model_saved", "Sentiment140")
 
     model_paths = [os.path.join(model_base_directory, dir_name) for dir_name in os.listdir(model_base_directory)]
     model_paths = [path for path in model_paths if os.path.isdir(path)]
