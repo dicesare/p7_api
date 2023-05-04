@@ -68,38 +68,7 @@ Les tests unitaires sont implémentés à l'aide de pytest. Vous pouvez les lanc
 
 ## Lancer l'image docker
 
-> docker run -p 8000:8000 -i -t p7_api:latest
-
-## Lancer minikube
-``minikube start``
-
-## Créer le déploiement Kubernetes
-``kubectl apply -f kubernetes/p7_api.yaml``
-
-## Créer le service Kubernetes
-``kubectl apply -f kubernetes/p7_api_service.yaml``
-
-## Vérifier l'état des déploiements
-``kubectl get deployments``
-
-## Vérifier l'état des pods
-``kubectl get pods``
-
-## Vérifier l'état des services
-``kubectl get services``
-
-## Exposer le déploiement sur l'hôte
-``minikube service p7-api``
-
-## Faire une requête POST vers le déploiement
-
-> Le port dépendra de celui renseigné dans le fichier de configuration ``***.yaml`` de kubernetes
-> 
-``curl -X POST http://localhost:30080/predict -H 'Content-Type: application/json' -d '{"text": "Je suis content !"}'
-``
-## Arrêter minikube
-``minikube stop``
-
+> docker run -p 8080:8080 -i -t p7_api:latest
 
 ## Auteurs
 
