@@ -29,4 +29,4 @@ EXPOSE 8080
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
 
 # Nommer l'image et spécifier la version
-LABEL name="p7_api" version="1.0.0"
+LABEL name="p7_api" version="1.1.0"
