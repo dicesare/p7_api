@@ -14,9 +14,9 @@ COPY models/ models/
 COPY routes/ routes/
 
 # Activer l'environnement virtuel et installer les dépendances
-RUN venv/Scripts/activate \
-    && pip install --upgrade pip \
-    && pip install -r requirements.txt
+RUN venv/Scripts/activate
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
 # Copie le dossier de tests dans le conteneur
 COPY test/ test/
