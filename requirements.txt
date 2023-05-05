@@ -4,3 +4,4 @@ uvicorn~=0.21.1
 tensorflow_text~=2.10.0
 pytest~=7.3.1
 httpx~=0.24.0
+google~=3.0.0
