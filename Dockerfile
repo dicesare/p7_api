@@ -14,7 +14,7 @@ COPY models/ models/
 COPY routes/ routes/
 
 # Activer l'environnement virtuel et installer les dépendances
-RUN . venv/bin/activate \
+RUN venv/Scripts/activate.bat \
     && pip install --upgrade pip \
     && pip install -r requirements.txt
 
