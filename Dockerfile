@@ -13,8 +13,10 @@ COPY requirements.txt /app
 COPY models/ models/
 COPY routes/ routes/
 
-# Installe les dépendances de l'application
-RUN pip install --no-cache-dir -r requirements.txt
+# Activer l'environnement virtuel et installer les dépendances
+RUN . venv/bin/activate \
+    && pip install --upgrade pip \
+    && pip install -r requirements.txt
 
 # Copie le dossier de tests dans le conteneur
 COPY test/ test/
